@@ -15,7 +15,7 @@ This is a beginner course for learners who would like to prepare themselves for 
 
 [course link](https://www.coursera.org/learn/programming-in-python)
 
-Course content  
+# Course content  
 During this course, you’ll cover everything you need to begin with Python development. The content of the four modules is listed below.
 
 ## Module 1 - Getting started with Python
