@@ -58,6 +58,7 @@ print(type(x))  # <class 'str'>
 print(x + y)    # AlokShandilya
 print(x, y)     # Alok Shandilya
 print(x + " " + y)  # Alok Shandilya
+print("Hello, {} {}".format(x, y))  # Hello, Alok Shandilya
 
 x = [3, 4, 5, "A", 777.7, "Shandilya"]      # list - [] square brackets
 print(x[5])     # Shandilya
@@ -68,7 +69,7 @@ for i in x:
     print(i)    # 3, 4, 5, 7, 777.7, Shandilya (different lines)
 
 x = (1, 2, "A", "Shandilya")
-# x[1] = "hurray"   # tuples doesn't support item assignment, no error, no output
+#x[1] = "hurray"   # type error (tuples doesn't support item assignment)
 print(type(x))  # <class 'tuple'>
 for i in x:
     print(i)    # 1, 1, A, Shandilya (different lines)
@@ -78,7 +79,7 @@ print(type(myDict))  # <class 'dict'>
 print(myDict)   # {1: 777, '2a': 'A', 3: 'Shandilya'}
 print(x)    # (1, 2, 'A', 'Shandilya')
 print(myDict[1])        # 777
-print(myDict['2a'])     # A
+print(myDict["2a"])     # A
 for i in myDict:
     print(i)        # 1, 2a, 3 (different lines) (displays keys)
 
@@ -91,4 +92,60 @@ del myDict
 # but you can remove items and add new items.
 mySet = {1, 2, "Alok", "Shandilya"}
 print(type(mySet))  # <class 'set'>
-#print(mySet[0])     # 'set' object is not subscriptable
+# print(mySet[0])     # 'set' object is not subscriptable
+
+################################################
+#           some inbuilt functions
+################################################
+# print(), len(), str(), int(), float(), input() etc.
+
+name = "Alok " \
+       "Shandilya"
+print(len(name))    # 14
+
+myString = "7"
+print(myString + str(9))     # 79 (type cast)
+myString = int(myString)    # type cast
+print(myString + 70)     # 77
+print(myString + float(myString))   # 14.0 (implicit type conversion), float(myString) is explicit
+#print('7' + float(myString))   # type error (can only concatenate str to str not float)
+
+print("Where do you live?")
+location = input()  # eg. New Delhi
+print("You live in " + location)    # You live in New Delhi
+
+################################################
+#           type casting
+################################################
+
+# int(): Converts a value to an integer.
+# str(): Converts a value to a string.
+# float(): Converts a value to a floating-point number.
+# ord(): Returns the Unicode code point of a character.
+# hex(): Converts an integer to a hexadecimal string.
+# oct(): Converts an integer to an octal string.
+# tuple(): Creates an immutable ordered collection.
+# set(): Creates an unordered collection of unique elements.
+# list(): Creates a mutable ordered collection.
+# dict(): Creates a mutable collection of key-value pairs (dictionary).
+
+print(ord("A"))     # 65
+
+################################################
+#         user input, console output
+################################################
+
+# print() Syntax
+#print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+
+# print() Parameters
+# objects - object to the printed. * indicates that there may be more than one object
+# sep - objects are separated by sep. Default value: ' '
+# end - end is printed at last
+# file - must be an object with write(string) method.
+# (If omitted, sys.stdout will be used which prints objects on the screen)
+# flush - If True, the stream is forcibly flushed. Default value: False
+
+# Note: sep, end, file, and flush are keyword arguments. If you want to use sep argument, you have to use
+#print(*objects, sep = 'separator')
+#print(*objects, 'separator') is incorrect
