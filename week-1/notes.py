@@ -110,9 +110,9 @@ print(myString + 70)     # 77
 print(myString + float(myString))   # 14.0 (implicit type conversion), float(myString) is explicit
 #print('7' + float(myString))   # type error (can only concatenate str to str not float)
 
-print("Where do you live?")
-location = input()  # eg. New Delhi
-print("You live in " + location)    # You live in New Delhi
+#print("Where do you live? ")
+#location = input()  # eg. New Delhi
+#print("You live in " + location)    # You live in New Delhi
 
 ################################################
 #           type casting
@@ -130,6 +130,13 @@ print("You live in " + location)    # You live in New Delhi
 # dict(): Creates a mutable collection of key-value pairs (dictionary).
 
 print(ord("A"))     # 65
+print(10 == 10.0)   # True
+num1 = input("Enter num1: ")    # let 10
+num2 = input("Enter num2: ")    # let 20
+print("The sum is :", num1 + num2)    # 1020 (everything typed in input() is converted to string in python)
+print("The sum is :", float(num1) + float(num2))    # The sum is : 30.0
+print("The sum is : " + str(float(num1) + float(num2)))     # The sum is : 30.0
+# implicit type conversion works on + operator with strings, integers, floats (not in combination)
 
 ################################################
 #         user input, console output
