@@ -10,21 +10,21 @@ x = 1
 print(x)  # 1
 
 x = 1 \
-    + 2
+  + 2
 print(x)  # 3
 
 def say_hello():
-    print("Hello there!")
+  print("Hello there!")
 print(say_hello())  # Hello there! None (in different lines)
 
-def say_hello(): print("Hello there!")
-print(say_hello())  # Hello there! None
+def say_hello2(): print("Hello there!")
+print(say_hello2())  # Hello there! None
 
-# def say_hello():
-# print("Hello there!")   #incorrect
+#def say_hello():
+#print("Hello there!")   #incorrect
 #
-#     def say_hello():
-# print("Hello there")    #incorrect
+#  def say_hello():
+#print("Hello there")    #incorrect
 
 ################################################
 #                variables
@@ -66,13 +66,13 @@ print(type(x))  # <class 'list'>
 print(type(x[3]), type(x[4]))   # <class 'str'> <class 'float'>
 x[3] = 7    # in list, we can change values
 for i in x:
-    print(i)    # 3, 4, 5, 7, 777.7, Shandilya (different lines)
+  print(i)    # 3, 4, 5, 7, 777.7, Shandilya (different lines)
 
 x = (1, 2, "A", "Shandilya")
 #x[1] = "hurray"   # type error (tuples doesn't support item assignment)
 print(type(x))  # <class 'tuple'>
 for i in x:
-    print(i)    # 1, 1, A, Shandilya (different lines)
+  print(i)    # 1, 1, A, Shandilya (different lines)
 
 myDict = {1: 777, '2a': "A", 3: "Shandilya"}
 print(type(myDict))  # <class 'dict'>
@@ -81,7 +81,7 @@ print(x)    # (1, 2, 'A', 'Shandilya')
 print(myDict[1])        # 777
 print(myDict["2a"])     # A
 for i in myDict:
-    print(i)        # 1, 2a, 3 (different lines) (displays keys)
+  print(i)        # 1, 2a, 3 (different lines) (displays keys)
 
 print(type(False))  # <class 'bool'>
 print(type("True")) # <class 'str'>
