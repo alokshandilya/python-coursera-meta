@@ -160,7 +160,7 @@ print("The sum is : " + str(float(num1) + float(num2)))  # The sum is : 30.0
 #         user input, console output
 ################################################
 
-# print() Syntax
+# print() syntax
 # print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 
 # print() Parameters
@@ -204,8 +204,6 @@ print("The sum is : " + str(float(num1) + float(num2)))  # The sum is : 30.0
 
 # control flow via conditional and loops
 
-# problem statement : you are a teen, have ID & are free, then can vote or not
-
 myAge = input("Enter your age : ")
 myAge = int(myAge)
 
@@ -213,13 +211,11 @@ if myAge >= 13 and myAge < 18:
     print("You are a teen, but not eligible to vote")
 elif myAge >= 18:
     isVoterCard = input("Do you have Voter ID card? (0 / 1) : ")
-    # remember
-    # print(bool(int(0))) is False
-    # print(bool(int(1))) is True
-    # print(bool("1")) is True
-    # print(bool("0")) is also True, input() accepts as string
+    # bool(0) is False, bool(1) is True
+    # bool("1"), bool("0") are True (intput() accepts as string)
+    # bool("") is False
     isBusy = input("Are you busy on election day? (0 / 1) : ")
-    if int(isVoterCard) and not int(isBusy):    # implicitly to bool
+    if int(isVoterCard) and not int(isBusy):
         print("You are eligible to vote, do vote in election")
     elif int(isVoterCard) and int(isBusy):
         print("Postpone your plans, and do vote on election day")
@@ -229,3 +225,113 @@ elif myAge >= 1 and myAge < 13:
     print("You are not a teen, grow old")
 else:
     print("Invlid age")
+
+################################################
+#              switch / match
+################################################
+# match compares a value to several different conditions until one is met
+
+match myAge:
+    case 18:
+        print("Just turned 18, congratulations")
+        print("You can vote")
+    case n if n > 18:
+        print("You can vote")
+    case _:
+        print("You can't vote")
+
+################################################
+#             looping constructs
+################################################
+# for, while loop
+# while loop, when to repeat a block of code as long as condition is true
+
+# range(start, stop, step)
+# start: The starting value of the sequence (optional, default is 0).
+# stop: The end value of the sequence (exclusive).
+# step: The step or increment between values (optional, default is 1).
+
+print("##########################")
+
+my_list = ["alok", 2, 3, 4, 5]
+for item in my_list:
+    print(item, end=" ")
+
+# for fixing output issues with end=" "
+# otherwise, output : alok 2 3 4 5 0 because of next loop's 0
+print()
+
+for i in range(5):      # range from 0 to 4
+    print(i, end=" ")
+print()
+
+for i in range(1, 6):   # range from 1 to 5 (exclusive)
+    print(i, end=" ")
+print()
+
+# print numbers from 1 to 5 using a while loop
+counter = 1
+while counter <= 5:
+    print(counter, end=" ")
+    counter += 1
+print()
+
+# use of break and continue in a loop
+# prints 1 and 3
+for i in range(1, 11):
+    if i == 5:
+        # break (terminates the loop prematurely)
+        break       # Exit the loop when is 5
+    if i % 2 == 0:
+        # continue (skips rest of code inside loop for current iteration and
+        # moves to next iteration)
+        continue    # Skip even numbers
+    print(i, end=" ")
+print()
+
+print("##########################")
+
+################################################
+#             enumerate()
+################################################
+
+# enumerate() function is used to iterate over a sequence while keeping track
+# of the index of the current item. It returns tuples containing both the index
+# and the corresponding element in the sequence.
+
+# enumerate() syntax : enumerate(iterable, start=0)
+# iterable: The sequence you want to iterate over
+# start (optional): The index value from which counting starts, defaults to 0
+
+# prints
+# index : 0, value : Alok
+# index : 1, value : MCA
+# index : 2, value : Tezpur University
+favourites = {"Alok", "MCA", "Tezpur University"}
+for index, item in enumerate(favourites):
+    print(f"index : {index}, value : {item}")       # format strings
+
+################################################
+#             pass statement
+################################################
+
+# pass statement is a null operation, serves as a placeholder where
+# syntactically some code is required but you don't want to execute
+# any instructions. It is often used as a stub when you are designing
+# a function or a class and want to leave the implementation for later.
+
+
+def my_function():
+    pass        # TODO: Add implementation later
+
+
+# in a conditional statement
+choise = input("Enter for False / True as (0 / 1): ")
+if int(choise):
+    pass        # TODO: Handle this case later
+else:
+    # Your actual code for the else case
+    print("condition is not met.")
+
+# pass is generally used for having a syntactically correct structure that you
+# can fill in with actual code later.
