@@ -15,14 +15,18 @@ def say_hello():
     print("Hello there!")
 
 
-print(say_hello())  # Hello there! None (in different lines)
+print(say_hello())
+# Hello there!
+# None
 
 
 def say_hello2():
     print("Hello there!")
 
 
-print(say_hello2())  # Hello there! None
+print(say_hello2())
+# Hello there!
+# None
 
 
 # def say_hello():
@@ -171,3 +175,57 @@ print("The sum is : " + str(float(num1) + float(num2)))  # The sum is : 30.0
 # If you want to use sep argument, you have to use
 # print(*objects, sep = 'separator')
 # print(*objects, 'separator') is incorrect
+
+
+################################################
+#                 operators
+################################################
+
+# math operators
+
+# Addition (+)          ->   Adds two numbers.
+# Subtraction (-)       ->   Subtracts the right operand from the left operand.
+# Multiplication (*)    ->   Multiplies two numbers.
+# Division (/)          ->   remember, result is a float
+# Floor Division (//)   ->   eg. 15 // 2 gives 7, while -17 // 3 gives -6
+# Modulus (%)           ->   Returns the remainder of the division.
+# Exponentiation (**)   ->   left operand to the power of the right operand.
+# Assignment (=)        ->   Assigns a value to a variable.
+
+# logical operators
+
+# Logical AND (and)     ->   Returns True if both operands are true.
+# Logical OR (or)       ->   Returns True if at least one operand is true.
+# Logical NOT (not)     ->   Returns the opposite boolean value of the operand.
+
+################################################
+#        conditional - if, elif, else
+################################################
+
+# control flow via conditional and loops
+
+# problem statement : you are a teen, have ID & are free, then can vote or not
+
+myAge = input("Enter your age : ")
+myAge = int(myAge)
+
+if myAge >= 13 and myAge < 18:
+    print("You are a teen, but not eligible to vote")
+elif myAge >= 18:
+    isVoterCard = input("Do you have Voter ID card? (0 / 1) : ")
+    # remember
+    # print(bool(int(0))) is False
+    # print(bool(int(1))) is True
+    # print(bool("1")) is True
+    # print(bool("0")) is also True, input() accepts as string
+    isBusy = input("Are you busy on election day? (0 / 1) : ")
+    if int(isVoterCard) and not int(isBusy):    # implicitly to bool
+        print("You are eligible to vote, do vote in election")
+    elif int(isVoterCard) and int(isBusy):
+        print("Postpone your plans, and do vote on election day")
+    else:
+        print("You are eligible to vote, make your Voter ID card")
+elif myAge >= 1 and myAge < 13:
+    print("You are not a teen, grow old")
+else:
+    print("Invlid age")
