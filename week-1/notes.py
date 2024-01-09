@@ -154,7 +154,10 @@ print("The sum is :", num1 + num2)
 print("The sum is :", float(num1) + float(num2))  # The sum is : 30.0
 print("The sum is : " + str(float(num1) + float(num2)))  # The sum is : 30.0
 # implicit type conversion works on + operator with strings, integers, floats
-# not in combination
+# but not in combination
+
+# perhaps, you could have casted with input
+# num1 = int(input("Enter num1: "))
 
 ################################################
 #         user input, console output
